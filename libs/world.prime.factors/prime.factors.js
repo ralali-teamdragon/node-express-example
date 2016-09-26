@@ -8,11 +8,10 @@ var primeFactors = function(request, response) {
     var decomposition = primeFactorsOf(number);
 
   	response.setHeader('Content-Type', 'application/json');
-    //response.send({ number: number, decomposition: decomposition });
 
-    console.log (typeof number);
+    var error = number > 1e6 ? "too big number (>1e6)" : "not a number";
 
-    isNaN(number) ? response.send({ number: number, error: "not a number" }) : response.send({ number: number, decomposition: decomposition });
+    isNaN(number) || number > 1e6 ? response.send({ number: number, error: error }) : response.send({ number: number, decomposition: decomposition });
 };
 
 module.exports = primeFactors;
