@@ -1,9 +1,7 @@
 var request = require('request');
 var http    = require('http');
 var chai = require('chai');
-chai.use(require('chai-json-schema'));
 var expect = chai.expect;
-var assert = chai.assert;
 var server  = require('../libs/server');
 
 describe('String Guard make it accept a GET request with a string as parameter and make it respond a JSON containing the "not a number" error message.:', function() {
@@ -19,9 +17,9 @@ describe('String Guard make it accept a GET request with a string as parameter a
     });
    
    
-    it('should be error if not a number', function(done) {
+    it('returns the expected pong', function(done) {
         request('http://localhost:7000/primeFactors?number=hello', function(error, response, body) {
-            assert.jsonSchema(JSON.parse(body), { "number" : "hello", "error" : "not a number" });
+            expect(body.replace(/\r?\n|\r|\s/g,"")).to.equal( JSON.stringify({"number" : "hello","error" : "not a number"}) );
             done(); 
         });
     });
