@@ -10,7 +10,7 @@ var primeFactors = function(request, response) {
 	response.setHeader('Content-Type', 'application/json');
     var number = response.send({ number: number, decomposition: decomposition });
 
-    (typeof number === 'string' || number instanceof String)? response.send({ number: number, error: decomposition }) : number;
+    (typeof number === 'string' || number instanceof String)? response.send({ number: request.query['number'], error: decomposition }) : number;
 };
 
 module.exports = primeFactors;
