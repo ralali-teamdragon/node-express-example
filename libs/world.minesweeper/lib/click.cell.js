@@ -34,12 +34,13 @@ function clickCell(element){
 
 	// }
 
-	// var bombCount = checkBombAround(grid, position);
-	// if(bombCount > 0) {
-	// 	element.innerHTML = bombCount; 
-	// } else {
-	// 	element.innerHTML = '';
-	// }
+	var bombCount = checkBombAround(grid, position);
+	console.log(bombCount, 'bombCount');
+	if(bombCount > 0) {
+		element.innerHTML = bombCount; 
+	} else {
+		element.innerHTML = '';
+	}
 
 	if(clickedCellContent === 'bomb'){
 		element.className = "lost";
