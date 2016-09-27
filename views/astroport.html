@@ -2,26 +2,46 @@
 <body>
 <div id="astroport-name">Astroman</div>
 
-<div id="gate-1">
+<div id="gate-1" class="free">
     First Gate
     <div id="ship-1">ship docked at gate 1</div>
 </div>
-<div id="gate-2">
+<div id="gate-2" class="free">
     Second Gate
     <div id="ship-2">ship docked at gate 2</div>
 </div>
-<div id="gate-3">
+<div id="gate-3" class="free">
     Third Gate
     <div id="ship-3">ship docked at gate 3</div>
 </div>
 
-Ship <input type="text" id="ship" name=""> <button type="submit" id="dock" onclick="replace()">Dock</button>
+Ship <input type="text" id="ship" onclick="hide()"> <button type="submit" id="dock" onclick="replace()">Dock</button>
+
+<div id="info" class="hidden">
+	This ship has been docked at gate 1
+</div>
 
 </body>
 <script type="text/javascript">
     function replace()
     {
         document.getElementById("ship-1").innerHTML = document.getElementById("ship").value;
+        document.getElementById("gate-1").className += " occupied";
+        document.getElementById("info").className = "show";
+    }
+    function hide()
+    {
+    	document.getElementById("info").className = "hidden";
     }
 </script>
+<style type="text/css">
+	.hidden
+	{
+		display: none;
+	}
+	.show
+	{
+		display: block;
+	}
+</style>
 </html>
