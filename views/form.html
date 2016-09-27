@@ -6,7 +6,28 @@
 <div id="invitation">
 	<p>Insert a number</p>
 	<input type="text" id="number">
-	<button id="go">Go</button>
+	<button id="go" onclick="click()">Go</button>
 </div>
+<div id="result"></div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+	// wait for the DOM to be loaded
+  $(document).ready(function() {
+		$("#go").click(function(){
+		 $.ajax({
+			 url: "/primefactors?number="+$("#number").val(),
+			 context: $("#number").val()
+		 }).done(function(data) {
+			 var content = data["number"] + " = ";
+			 for (var i = 0; i < data["decomposition"].length; i++) {
+				 content += data["decomposition"][i];
+				 if(i < data["decomposition"].length-1)
+				 	content += " x ";
+			 }
+			 $("#result").html(content);
+		 });
+ })
+  });
+</script>
 </html>
