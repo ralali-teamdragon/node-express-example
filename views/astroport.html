@@ -15,7 +15,7 @@
     <div id="ship-3">ship docked at gate 3</div>
 </div>
 
-Ship <input type="text" id="ship" onclick="hide()"> <button type="submit" id="dock" onclick="replace()">Dock</button>
+Ship <input type="text" id="ship" onkeyup="hide()" onblur="hide()"> <button type="submit" id="dock" onclick="replace()">Dock</button>
 
 <div id="info" class="hidden">
 	This ship has been docked at gate 1
