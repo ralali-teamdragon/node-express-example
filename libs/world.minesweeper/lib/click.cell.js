@@ -9,31 +9,35 @@ function clickCell(element){
 	
 	element.innerHTML = ''; // initially clean up inner html content
 
-	// for(n=0; n<grid.length; n++){
-		
-	// 	for(p=0; p<grid.length; p++){
-	// 		var location = [n,p];
-	// 		var bombCount = checkBombAround(grid, location);
+	var limitRow = (row === grid.length) ? grid.length : row + 1;
+	var initRow = (row === 0) ? 0 : row-1;
+	var limitCol = (column === grid.length) ? grid.length : column+1;
+	var initCol = (column === 0) ? 0 : column-1;
 
-	// 		var cellRow = n+1;
-	// 		var cellColumn = p+1;
-	// 		var cellId = "cell-"+cellRow+"x"+cellColumn;
-	// 		var cell = document.getElementById(cellId);
+	for (var i = initRow; i <= limitRow; i++) {
+		var cellRow = i + 1;
+		for (var j = initCol; j <= limitCol; j++) {
+			console.log(i, j);
+			var cellColumn = j + 1;
+			var location = [i,j];
+			var bombCount = checkBombAround(grid, location);
+			var cellId = "cell-"+cellRow+"x"+cellColumn;
+			var cell = document.getElementById(cellId);
 
-	// 		if(bombCount > 0) {
-	// 			cell.innerHTML = bombCount; 
-	// 		}
+			if(bombCount > 0) {
+				cell.innerHTML = bombCount;
+			}
 
-	// 		var cellContent = grid[n][p];
-	// 		if(cellContent === 'bomb'){
-	// 			cell.className = "lost";
-	// 		} else {
-	// 			cell.className = "safe";
-	// 		}
-	// 	}
-
-	// }
-
+			var cellContent = grid[i][j];
+			if(cellContent === 'bomb'){
+				cell.className = "lost";
+				cell.innerHTML = '';
+			} else {
+				cell.className = "safe";
+			}
+		}
+	}
+	
 	var bombCount = checkBombAround(grid, position);
 	console.log(bombCount, 'bombCount');
 	if(bombCount > 0) {
