@@ -15,7 +15,7 @@
     <div id="ship-3">ship docked at gate 3</div>
 </div>
 
-Ship <input type="text" id="ship" onclick="hide()"> <button type="submit" id="dock" onclick="replace()">Dock</button>
+Ship <input type="text" id="ship" onkeyup="hide()" onblur="hide()" onfocus="hide()"> <button type="submit" id="dock" onclick="replace()">Dock</button>
 
 <div id="info" class="hidden">
 	This ship has been docked at gate 1
@@ -29,6 +29,7 @@ Ship <input type="text" id="ship" onclick="hide()"> <button type="submit" id="do
 		document.getElementById("ship").value       = "";
 		document.getElementById("gate-1").className += " occupied";
 		document.getElementById("info").className   = "";
+		document.getElementById("info").removeAttribute("class");
     }
     function hide()
     {
