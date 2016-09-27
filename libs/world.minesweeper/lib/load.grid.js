@@ -33,10 +33,10 @@ function load(){
 	                ['bomb' , 'empty', 'empty', 'bomb' , 'empty', 'empty', 'bomb' , 'empty'],
 	                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
 	                ['empty', 'empty', 'bomb' , 'empty', 'empty', 'bomb', 'empty', 'empty'],
-	                ['bomb' , 'empty', 'empty', 'bomb' , 'empty', 'empty', 'bomb' , 'empty'],
+	                ['bomb' , 'empty', 'empty', 'bomb' , 'empty', 'empty', 'empty' , 'empty'],
 	                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
 	                ['empty', 'empty', 'bomb' , 'empty', 'empty', 'bomb', 'empty', 'empty'],
-	                ['bomb' , 'empty', 'empty', 'bomb' , 'empty', 'empty', 'bomb' , 'empty']
+	                ['bomb' , 'empty', 'empty', 'bomb' , 'empty', 'empty', 'empty' , 'empty']
                 ]
             ];
 
