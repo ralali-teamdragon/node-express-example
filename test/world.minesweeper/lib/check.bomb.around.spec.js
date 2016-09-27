@@ -11,7 +11,7 @@ var data = [
 		['empty', 'bomb', 'empty', 'empty', 'empty', 'empty', 'bomb',  'empty'],
 	]
 describe("Check bomb around", function() {
-  it("checks how many bombs around (middle field)", function() {
+  /*it("checks how many bombs around (middle field)", function() {
   	var bombCount = checkBombAround(data, [5,5]); 
 
   	expect(bombCount).toEqual(8);
@@ -39,5 +39,5 @@ describe("Check bomb around", function() {
 	var bombCount = checkBombAround(data, [7,0]);
 
 	expect(bombCount).toEqual(3);
-  });
+  });*/
 });

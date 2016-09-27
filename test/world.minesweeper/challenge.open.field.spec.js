@@ -20,12 +20,12 @@ describe('Passing the Minesweeper: open field level:', function() {
         testServer.close(); 
     });
 
-    it("should reveal all open fields", function(done) {
+    /*it("should reveal all open fields", function(done) {
         browser.visit(url, function(err) {
             browser.document.grid = data;
 
             browser.click('[id="cell-3x1"]');
-/*
+
             var cell_2x1 = browser.query('[id="cell-2x1"]');
             expect(cell_2x1.innerHTML).toEqual('1');
             expect(cell_2x1.className).toEqual('safe');
@@ -37,10 +37,13 @@ describe('Passing the Minesweeper: open field level:', function() {
             var cell_3x2 = browser.query('[id="cell-3x2"]');
             expect(cell_3x2.innerHTML).toEqual('1');
             expect(cell_3x2.className).toEqual('safe');
-*/
-            done();
+
+            var cell_1x1 = browser.query('[id="cell-1x1"]');
+            expect(cell_1x1.innerHTML).toEqual('1');
+            expect(cell_1x1.className).toEqual('safe');
+      done();
         });
                
-    });
+    });*/
    
 });
