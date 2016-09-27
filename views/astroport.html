@@ -25,9 +25,10 @@ Ship <input type="text" id="ship" onclick="hide()"> <button type="submit" id="do
 <script type="text/javascript">
     function replace()
     {
-        document.getElementById("ship-1").innerHTML = document.getElementById("ship").value;
-        document.getElementById("gate-1").className += " occupied";
-        document.getElementById("info").className = "show";
+		document.getElementById("ship-1").innerHTML = document.getElementById("ship").value;
+		document.getElementById("ship").value       = "";
+		document.getElementById("gate-1").className += " occupied";
+		document.getElementById("info").className   = "";
     }
     function hide()
     {
@@ -38,10 +39,6 @@ Ship <input type="text" id="ship" onclick="hide()"> <button type="submit" id="do
 	.hidden
 	{
 		display: none;
-	}
-	.show
-	{
-		display: block;
 	}
 </style>
 </html>
